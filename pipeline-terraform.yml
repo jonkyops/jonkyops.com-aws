@@ -16,11 +16,11 @@ Parameters:
     Description: The Git branch to be used
   TerraformVersion:
     Type: String
-    Default: 0.8.7
+    Default: 0.11.9
     Description: The Terraform version to use
   TerraformSha256:
     Type: String
-    Default: 7ca424d8d0e06697cc7f492b162223aef525bfbcd69248134a0ce0b529285c8c
+    Default: 5d674e7b83945c37f7f14d0e4f655787dad86ba15b26e185604aa0c3812394ab
     Description: HASHICORP - Y U NO PACKAGE REPOSITORY
 Metadata:
   AWS::CloudFormation::Interface:
@@ -76,19 +76,19 @@ Resources:
               RunOrder: 1
         - Name: InvokeTerraform
           Actions:
-          - Name: InvokeTerraformAction
-            ActionTypeId:
+            - Name: InvokeTerraformAction
+              ActionTypeId:
                 Category: Build
                 Owner: AWS
                 Version: 1
                 Provider: CodeBuild
-            OutputArtifacts:
-              - Name: InvokeTerraformOutput
-            InputArtifacts:
-              - Name: SourceOutput
-            Configuration:
+              OutputArtifacts:
+                - Name: InvokeTerraformOutput
+              InputArtifacts:
+                - Name: SourceOutput
+              Configuration:
                 ProjectName: !Ref InvokeTerraformBuild
-            RunOrder: 1
+              RunOrder: 1
   PipelineRole:
     Type: AWS::IAM::Role
     Properties:

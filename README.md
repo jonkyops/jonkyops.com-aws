@@ -6,6 +6,7 @@ Infrastructure for jonkyops.com
 
 ## Usage
 
+Make an SSM parameter for your github oath token, name it GitHubOath and make sure the version is correct in the pipeline-terraform.yml.
 Run the cloudformation template in AWS to create the terraform pipeline.
 
 ## Contributing
