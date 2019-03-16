@@ -1,5 +1,5 @@
 provider "aws" {
-  region     = "us-east-1"
+  region = "us-east-1"
 }
 
 resource "aws_iam_role" "build" {
@@ -45,9 +45,9 @@ POLICY
 }
 
 resource "aws_codebuild_project" "build" {
-  name          = "jonkyops"
-  description   = "jonkyops.com project"
-  service_role  = "${aws_iam_role.build.arn}"
+  name         = "jonkyops"
+  description  = "jonkyops.com project"
+  service_role = "${aws_iam_role.build.arn}"
 
   artifacts {
     type = "NO_ARTIFACTS"
@@ -65,4 +65,3 @@ resource "aws_codebuild_project" "build" {
     type         = "LINUX_CONTAINER"
   }
 }
-

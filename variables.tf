@@ -1,3 +1,8 @@
+variable "site_name" {
+  description = "site url"
+  default     = "jonkyops.com"
+}
+
 variable "codebuild_image" {
   description = "image used for the build, see https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-available.html"
   default     = "aws/codebuild/nodejs:8.11.0"
