@@ -1,0 +1,3 @@
+bucket = "terraform-stack-terraformstatebucket-ywr42p0e1wor"
+key    = "terraformstack.tfstate"
+region = "us-east-1"
