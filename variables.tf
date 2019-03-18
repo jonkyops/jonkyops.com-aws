@@ -1,6 +1,14 @@
-variable "site_name" {
+variable "site_domain" {
   description = "site url"
   default     = "jonkyops.com"
+}
+
+variable "codebuild_owner" {
+  default = "jonkyops"
+}
+
+variable "codebuild_repo" {
+  default = "jonkyops"
 }
 
 variable "codebuild_image" {
