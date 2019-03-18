@@ -8,7 +8,7 @@ variable "codebuild_owner" {
 }
 
 variable "codebuild_repo" {
-  default = "jonkyops"
+  default = "jonkyops.com"
 }
 
 variable "codebuild_image" {
