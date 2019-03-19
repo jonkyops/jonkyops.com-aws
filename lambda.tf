@@ -1,3 +1,4 @@
+# zip up the function to send to lambda
 data "archive_file" "lambda_zip" {
   type        = "zip"
   source_file = "index.js"
@@ -5,7 +6,7 @@ data "archive_file" "lambda_zip" {
 }
 
 resource "aws_lambda_function" "edge_lambda" {
-  function_name = "index-html-convert"
+  function_name = "oai-url-rewrite"
   filename      = "function.zip"
   handler       = "index.handler"
   runtime       = "nodejs8.10"
