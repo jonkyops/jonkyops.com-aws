@@ -13,7 +13,7 @@ variable "codebuild_repo" {
 
 variable "codebuild_image" {
   description = "image used for the build, see https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-available.html"
-  default     = "aws/codebuild/nodejs:8.11.0"
+  default     = "aws/codebuild/ruby:2.5.3"
 }
 
 variable "codebuild_github_repo_url" {
