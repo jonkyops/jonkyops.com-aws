@@ -20,9 +20,9 @@ resource "aws_codepipeline" "pipeline" {
       output_artifacts = ["artifacts"]
 
       configuration = {
-        Owner      = "${var.github_owner}"
-        Repo       = "${var.github_repo}"
-        Branch     = "${var.github_branch}"
+        Owner  = "${var.github_owner}"
+        Repo   = "${var.github_repo}"
+        Branch = "${var.github_branch}"
 
         # this needs to be here, even if it's a public repo
         OAuthToken = "${aws_ssm_parameter.github_oauth_token.value}"

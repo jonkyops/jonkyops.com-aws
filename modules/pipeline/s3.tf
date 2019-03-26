@@ -1,7 +1,7 @@
 # artifact bucket
 resource "aws_s3_bucket" "artifacts" {
   bucket_prefix = "${var.github_repo}-artifacts"
-  acl    = "private"
+  acl           = "private"
 
   server_side_encryption_configuration {
     rule {

@@ -76,7 +76,7 @@ data "aws_iam_policy_document" "pipeline_assume_role_policy" {
 
 # role for pipeline
 resource "aws_iam_role" "pipeline" {
-  name = "pipeline-role"
+  name               = "pipeline-role"
   assume_role_policy = "${data.aws_iam_policy_document.pipeline_assume_role_policy.json}"
 }
 

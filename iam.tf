@@ -25,6 +25,6 @@ resource "aws_iam_policy" "build_site_policy" {
 }
 
 resource "aws_iam_role_policy_attachment" "build_site_attach" {
-  role = "${module.pipeline.build_role_name}"
+  role       = "${module.pipeline.build_role_name}"
   policy_arn = "${aws_iam_policy.build_site_policy.arn}"
 }
