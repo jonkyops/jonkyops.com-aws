@@ -1,8 +1,8 @@
 # zip up the function to send to lambda
 data "archive_file" "lambda_zip" {
   type        = "zip"
-  source_file = "index.js"
-  output_path = "function.zip"
+  source_file = "${path.module}/index.js"
+  output_path = "${path.module}/function.zip"
 }
 
 resource "aws_lambda_function" "edge_lambda" {

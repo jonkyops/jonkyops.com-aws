@@ -1,12 +1,5 @@
-# site variables
-variable "site_domain" {
-  description = "site url"
-  default     = "jonkyops.com"
-}
-
-# build variables
 variable "codebuild_project_name" {
-  default = "jonkyops"
+  default = "jonkyops-build"
 }
 
 variable "codepipeline_name" {

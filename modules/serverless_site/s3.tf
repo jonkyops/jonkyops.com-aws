@@ -28,17 +28,3 @@ resource "aws_s3_bucket_policy" "site" {
   bucket = "${aws_s3_bucket.site.id}"
   policy = "${data.aws_iam_policy_document.s3_policy.json}"
 }
-
-# artifact bucket
-resource "aws_s3_bucket" "artifacts" {
-  bucket = "${var.site_domain}-artifacts"
-  acl    = "private"
-
-  server_side_encryption_configuration {
-    rule {
-      apply_server_side_encryption_by_default {
-        sse_algorithm = "AES256"
-      }
-    }
-  }
-}
