@@ -6,7 +6,7 @@ variable "site_domain" {
 
 # build variables
 variable "codebuild_project_name" {
-  default = "jonkyops"
+  default = "jonkyops-build"
 }
 
 variable "codepipeline_name" {
