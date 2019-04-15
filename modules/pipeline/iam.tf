@@ -56,6 +56,28 @@ data "aws_iam_policy_document" "build_policy" {
       "${aws_s3_bucket.artifacts.arn}",
     ]
   }
+
+  statement {
+    actions   = ["ssm:DescribeParameters"]
+    resources = ["*"]
+  }
+
+  # general permission to get any parameters with the codebuild prefix, since the parameters won't exist before this is created
+  statement {
+    actions   = ["ssm:GetParameters"]
+    resources = ["arn:aws:ssm:*:*:parameter/codebuild-*"]
+  }
+
+  # let codebuild create invalidations for cloudfront
+  # TODO: update this to only allow validations to the cloudfront it's deploying for
+  statement {
+    actions = [
+      "cloudfront:CreateInvalidation",
+      "cloudfront:GetInvalidation",
+      "cloudfront:ListInvalidations",
+    ]
+    resources = ["*"]
+  }
 }
 
 #------------------------------------
